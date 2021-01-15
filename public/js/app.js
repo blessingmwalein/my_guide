@@ -38625,6 +38625,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _Components_Navs_Login__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/Components/Navs/Login */ "./resources/js/Components/Navs/Login.vue");
 /* harmony import */ var _Components_Navs_Register__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Components/Navs/Register */ "./resources/js/Components/Navs/Register.vue");
+/* harmony import */ var _Mixins_global__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Mixins/global */ "./resources/js/Mixins/global.js");
 //
 //
 //
@@ -38710,34 +38711,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -38747,7 +38721,8 @@ __webpack_require__.r(__webpack_exports__);
   components: {
     Login: _Components_Navs_Login__WEBPACK_IMPORTED_MODULE_0__.default,
     Register: _Components_Navs_Register__WEBPACK_IMPORTED_MODULE_1__.default
-  }
+  },
+  mixins: [_Mixins_global__WEBPACK_IMPORTED_MODULE_2__.default]
 });
 
 /***/ }),
@@ -40696,6 +40671,7 @@ __webpack_require__.r(__webpack_exports__);
   mixins: [_Mixins_global_js__WEBPACK_IMPORTED_MODULE_10__.default],
   mounted: function mounted() {
     this.getTags();
+    this.selected_page = "ask";
   },
   data: function data() {
     return {
@@ -41532,6 +41508,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Components_Question__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Components/Question */ "./resources/js/Components/Question.vue");
 /* harmony import */ var _Components_Widgets_Widget__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Components/Widgets/Widget */ "./resources/js/Components/Widgets/Widget.vue");
 /* harmony import */ var _Mixins_global__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Mixins/global */ "./resources/js/Mixins/global.js");
+/* harmony import */ var _Components_BreadCrumbs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/Components/BreadCrumbs */ "./resources/js/Components/BreadCrumbs.vue");
 //
 //
 //
@@ -41603,6 +41580,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+
 
 
 
@@ -41611,16 +41593,19 @@ __webpack_require__.r(__webpack_exports__);
   props: ['questions', "answered_questions", "not_answers", "top_5users"],
   mixins: [_Mixins_global__WEBPACK_IMPORTED_MODULE_3__.default],
   components: {
+    BreadCrumbs: _Components_BreadCrumbs__WEBPACK_IMPORTED_MODULE_4__.default,
     AppLayout: _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__.default,
     Question: _Components_Question__WEBPACK_IMPORTED_MODULE_1__.default,
     Widget: _Components_Widgets_Widget__WEBPACK_IMPORTED_MODULE_2__.default
   },
   mounted: function mounted() {
     this.getTags();
+    this.selected_page = "home";
   },
   data: function data() {
     return {
-      home: true
+      home: true,
+      page_name: "home"
     };
   },
   methods: {
@@ -43697,7 +43682,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       all_questions: [],
       all_top_5users: [],
       success_message: ""
-    }, _defineProperty(_ref, "success_message", ""), _defineProperty(_ref, "answer_button", false), _ref;
+    }, _defineProperty(_ref, "success_message", ""), _defineProperty(_ref, "answer_button", false), _defineProperty(_ref, "selected_page", "home"), _ref;
   },
   methods: {
     getTags: function getTags() {
@@ -79146,7 +79131,7 @@ var render = function() {
             _c("ul", [
               _c(
                 "li",
-                { staticClass: "current_page_item" },
+                { class: { current_page_item: _vm.selected_page === "home" } },
                 [
                   _c("inertia-link", { attrs: { href: _vm.route("home") } }, [
                     _vm._v("Home")
@@ -79157,7 +79142,10 @@ var render = function() {
               _vm._v(" "),
               _c(
                 "li",
-                { staticClass: "ask_question" },
+                {
+                  staticClass: "ask_question ",
+                  class: { current_page_item: _vm.selected_page === "ask" }
+                },
                 [
                   _c(
                     "inertia-link",
@@ -79170,11 +79158,7 @@ var render = function() {
               _vm._v(" "),
               _vm._m(4),
               _vm._v(" "),
-              _vm._m(5),
-              _vm._v(" "),
-              _vm._m(6),
-              _vm._v(" "),
-              _vm._m(7)
+              _vm._m(5)
             ])
           ])
         ])
@@ -79314,7 +79298,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "logo" }, [
-      _c("a", { attrs: { href: "index-2.html" } }, [
+      _c("a", { attrs: { href: "#" } }, [
         _c("img", { attrs: { alt: "", src: "images/logo.png" } })
       ])
     ])
@@ -79324,44 +79308,20 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("li", [
-      _c("a", { attrs: { href: "user_profile.html" } }, [_vm._v("User")]),
+      _c("a", { attrs: { href: "#" } }, [_vm._v("Porfolio")]),
       _vm._v(" "),
       _c("ul", [
-        _c("li", [
-          _c("a", { attrs: { href: "user_profile.html" } }, [
-            _vm._v("User Profile")
-          ])
-        ]),
+        _c("li", [_c("a", { attrs: { href: "" } }, [_vm._v("User Profile")])]),
         _vm._v(" "),
         _c("li", [
-          _c("a", { attrs: { href: "user_questions.html" } }, [
-            _vm._v("User Questions")
-          ])
+          _c("a", { attrs: { href: "" } }, [_vm._v("User Questions")])
         ]),
         _vm._v(" "),
-        _c("li", [
-          _c("a", { attrs: { href: "user_answers.html" } }, [
-            _vm._v("User Answers")
-          ])
-        ]),
+        _c("li", [_c("a", { attrs: { href: "" } }, [_vm._v("User Answers")])]),
         _vm._v(" "),
-        _c("li", [
-          _c("a", { attrs: { href: "user_favorite_questions.html" } }, [
-            _vm._v("User Favorite Questions")
-          ])
-        ]),
+        _c("li", [_c("a", { attrs: { href: "" } }, [_vm._v("User Points")])]),
         _vm._v(" "),
-        _c("li", [
-          _c("a", { attrs: { href: "user_points.html" } }, [
-            _vm._v("User Points")
-          ])
-        ]),
-        _vm._v(" "),
-        _c("li", [
-          _c("a", { attrs: { href: "edit_profile.html" } }, [
-            _vm._v("Edit Profile")
-          ])
-        ])
+        _c("li", [_c("a", { attrs: { href: "" } }, [_vm._v("Edit Profile")])])
       ])
     ])
   },
@@ -79369,101 +79329,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("li", [
-      _c("a", { attrs: { href: "blog_1.html" } }, [_vm._v("Blog")]),
-      _vm._v(" "),
-      _c("ul", [
-        _c("li", [
-          _c("a", { attrs: { href: "blog_1.html" } }, [_vm._v("Blog 1")]),
-          _vm._v(" "),
-          _c("ul", [
-            _c("li", [
-              _c("a", { attrs: { href: "blog_1.html" } }, [
-                _vm._v("Right sidebar")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("a", { attrs: { href: "blog_1_l_sidebar.html" } }, [
-                _vm._v("Left sidebar")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("a", { attrs: { href: "blog_1_full_width.html" } }, [
-                _vm._v("Full Width")
-              ])
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("li", [
-          _c("a", { attrs: { href: "blog_2.html" } }, [_vm._v("Blog 2")]),
-          _vm._v(" "),
-          _c("ul", [
-            _c("li", [
-              _c("a", { attrs: { href: "blog_2.html" } }, [
-                _vm._v("Right sidebar")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("a", { attrs: { href: "blog_2_l_sidebar.html" } }, [
-                _vm._v("Left sidebar")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("a", { attrs: { href: "blog_2_full_width.html" } }, [
-                _vm._v("Full Width")
-              ])
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("li", [
-          _c("a", { attrs: { href: "single_post.html" } }, [
-            _vm._v("Post Single")
-          ]),
-          _vm._v(" "),
-          _c("ul", [
-            _c("li", [
-              _c("a", { attrs: { href: "single_post.html" } }, [
-                _vm._v("Right sidebar")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("a", { attrs: { href: "single_post_l_sidebar.html" } }, [
-                _vm._v("Left sidebar")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("a", { attrs: { href: "single_post_full_width.html" } }, [
-                _vm._v("Full Width")
-              ])
-            ])
-          ])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", [
-      _c("a", { attrs: { href: "shortcodes.html" } }, [_vm._v("Shortcodes")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", [
-      _c("a", { attrs: { href: "contact_us.html" } }, [_vm._v("Contact Us")])
-    ])
+    return _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("Contact Us")])])
   }
 ]
 render._withStripped = true
@@ -84133,206 +83999,212 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("app-layout", [
-    _c("div", { staticClass: "section-warp ask-me" }, [
-      _c("div", { staticClass: "container clearfix" }, [
-        _c(
-          "div",
-          {
-            staticClass: "box_icon box_warp box_no_border box_no_background",
-            attrs: {
-              box_border: "transparent",
-              box_background: "transparent",
-              box_color: "#FFF"
-            }
-          },
-          [
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col-md-3" }, [
-                _c("h2", [_vm._v("Welcome to Ask me")]),
-                _vm._v(" "),
-                _c("p", [
-                  _vm._v(
-                    "Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis. Curabitur vitae velit in neque dictum blandit. Proin in iaculis neque."
+  return _c(
+    "app-layout",
+    [
+      _c("div", { staticClass: "section-warp ask-me" }, [
+        _c("div", { staticClass: "container clearfix" }, [
+          _c(
+            "div",
+            {
+              staticClass: "box_icon box_warp box_no_border box_no_background",
+              attrs: {
+                box_border: "transparent",
+                box_background: "transparent",
+                box_color: "#FFF"
+              }
+            },
+            [
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col-md-3" }, [
+                  _c("h2", [_vm._v("Welcome to My Guide")]),
+                  _vm._v(" "),
+                  _c("p", [
+                    _vm._v(
+                      "A place where developers in zimbabwe meet and can share ideas solve each other problems and also place for free lancers to create their portfolio."
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "clearfix" }),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      staticClass: "color button dark_button medium",
+                      attrs: { href: "#" }
+                    },
+                    [_vm._v("About Us")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      staticClass: "color button dark_button medium",
+                      attrs: { href: "#" }
+                    },
+                    [_vm._v("Join Now")]
                   )
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "clearfix" }),
-                _vm._v(" "),
-                _c(
-                  "a",
-                  {
-                    staticClass: "color button dark_button medium",
-                    attrs: { href: "#" }
-                  },
-                  [_vm._v("About Us")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "a",
-                  {
-                    staticClass: "color button dark_button medium",
-                    attrs: { href: "#" }
-                  },
-                  [_vm._v("Join Now")]
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-md-9" }, [
-                _c("form", { staticClass: "form-style form-style-2" }, [
-                  _c("p", [
-                    _c(
-                      "textarea",
-                      {
-                        attrs: {
-                          rows: "4",
-                          id: "question_title",
-                          onfocus:
-                            "if(this.value=='Ask any question and you be sure find your answer ?')this.value='';",
-                          onblur:
-                            "if(this.value=='')this.value='Ask any question and you be sure find your answer ?';"
-                        }
-                      },
-                      [
-                        _vm._v(
-                          "Ask any question and you be sure find your answer ?"
-                        )
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c("i", { staticClass: "icon-pencil" }),
-                    _vm._v(" "),
-                    _c(
-                      "span",
-                      { staticClass: "color button small publish-question" },
-                      [_vm._v("Ask Now")]
-                    )
+                _c("div", { staticClass: "col-md-9" }, [
+                  _c("form", { staticClass: "form-style form-style-2" }, [
+                    _c("p", [
+                      _c(
+                        "textarea",
+                        {
+                          attrs: {
+                            rows: "4",
+                            id: "question_title",
+                            onfocus:
+                              "if(this.value=='Ask any question and you be sure find your answer ?')this.value='';",
+                            onblur:
+                              "if(this.value=='')this.value='Ask any question and you be sure find your answer ?';"
+                          }
+                        },
+                        [
+                          _vm._v(
+                            "Ask any question and you be sure find your answer ?"
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("i", { staticClass: "icon-pencil" }),
+                      _vm._v(" "),
+                      _c(
+                        "span",
+                        { staticClass: "color button small publish-question" },
+                        [_vm._v("Ask Now")]
+                      )
+                    ])
                   ])
                 ])
               ])
-            ])
-          ]
+            ]
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("bread-crumbs", { attrs: { name: "My Guide" } }),
+      _vm._v(" "),
+      _c("section", { staticClass: "container main-content" }, [
+        _c(
+          "div",
+          { staticClass: "row" },
+          [
+            _c("div", { staticClass: "col-md-9" }, [
+              _c("div", { staticClass: "tabs-warp question-tab" }, [
+                _c("ul", { staticClass: "tabs" }, [
+                  _c("li", { staticClass: "tab" }, [
+                    _c("a", { staticClass: "current", attrs: { href: "#" } }, [
+                      _vm._v("Recent Questions")
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "tab" }, [
+                    _c("a", { attrs: { href: "#" } }, [
+                      _vm._v("Recently Answered")
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "tab" }, [
+                    _c("a", { attrs: { href: "#" } }, [_vm._v("No answers")])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "tab-inner-warp" }, [
+                  _c(
+                    "div",
+                    { staticClass: "tab-inner" },
+                    [
+                      _vm._l(_vm.questions.data, function(question) {
+                        return _vm.questions.data.length > 0
+                          ? _c("question", {
+                              key: question.id,
+                              attrs: { home: _vm.home, question: question }
+                            })
+                          : _c("div", { staticClass: "alert-message info" }, [
+                              _c("i", { staticClass: "icon-bullhorn" }),
+                              _vm._v(" "),
+                              _c("p", [
+                                _c("span", [_vm._v("Opps no questions yet")]),
+                                _c("br")
+                              ])
+                            ])
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "a",
+                        { staticClass: "load-questions", attrs: { href: "#" } },
+                        [
+                          _c("i", { staticClass: "icon-refresh" }),
+                          _vm._v("Load More Questions")
+                        ]
+                      )
+                    ],
+                    2
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "tab-inner-warp" }, [
+                  _c(
+                    "div",
+                    { staticClass: "tab-inner" },
+                    [
+                      _vm._l(_vm.answered_questions.data, function(question) {
+                        return _c("question", {
+                          key: question.id,
+                          attrs: { home: _vm.home, question: question }
+                        })
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "a",
+                        { staticClass: "load-questions", attrs: { href: "#" } },
+                        [
+                          _c("i", { staticClass: "icon-refresh" }),
+                          _vm._v("Load More Questions")
+                        ]
+                      )
+                    ],
+                    2
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "tab-inner-warp" }, [
+                  _c(
+                    "div",
+                    { staticClass: "tab-inner" },
+                    [
+                      _vm._l(_vm.not_answers.data, function(question) {
+                        return _c("question", {
+                          key: question.id,
+                          attrs: { home: _vm.home, question: question }
+                        })
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "a",
+                        { staticClass: "load-questions", attrs: { href: "#" } },
+                        [
+                          _c("i", { staticClass: "icon-refresh" }),
+                          _vm._v("Load More Questions")
+                        ]
+                      )
+                    ],
+                    2
+                  )
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("widget")
+          ],
+          1
         )
       ])
-    ]),
-    _vm._v(" "),
-    _c("section", { staticClass: "container main-content" }, [
-      _c(
-        "div",
-        { staticClass: "row" },
-        [
-          _c("div", { staticClass: "col-md-9" }, [
-            _c("div", { staticClass: "tabs-warp question-tab" }, [
-              _c("ul", { staticClass: "tabs" }, [
-                _c("li", { staticClass: "tab" }, [
-                  _c("a", { staticClass: "current", attrs: { href: "#" } }, [
-                    _vm._v("Recent Questions")
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("li", { staticClass: "tab" }, [
-                  _c("a", { attrs: { href: "#" } }, [
-                    _vm._v("Recently Answered")
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("li", { staticClass: "tab" }, [
-                  _c("a", { attrs: { href: "#" } }, [_vm._v("No answers")])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "tab-inner-warp" }, [
-                _c(
-                  "div",
-                  { staticClass: "tab-inner" },
-                  [
-                    _vm._l(_vm.questions.data, function(question) {
-                      return _vm.questions.data.length > 0
-                        ? _c("question", {
-                            key: question.id,
-                            attrs: { home: _vm.home, question: question }
-                          })
-                        : _c("div", { staticClass: "alert-message info" }, [
-                            _c("i", { staticClass: "icon-bullhorn" }),
-                            _vm._v(" "),
-                            _c("p", [
-                              _c("span", [_vm._v("Opps no questions yet")]),
-                              _c("br")
-                            ])
-                          ])
-                    }),
-                    _vm._v(" "),
-                    _c(
-                      "a",
-                      { staticClass: "load-questions", attrs: { href: "#" } },
-                      [
-                        _c("i", { staticClass: "icon-refresh" }),
-                        _vm._v("Load More Questions")
-                      ]
-                    )
-                  ],
-                  2
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "tab-inner-warp" }, [
-                _c(
-                  "div",
-                  { staticClass: "tab-inner" },
-                  [
-                    _vm._l(_vm.answered_questions.data, function(question) {
-                      return _c("question", {
-                        key: question.id,
-                        attrs: { home: _vm.home, question: question }
-                      })
-                    }),
-                    _vm._v(" "),
-                    _c(
-                      "a",
-                      { staticClass: "load-questions", attrs: { href: "#" } },
-                      [
-                        _c("i", { staticClass: "icon-refresh" }),
-                        _vm._v("Load More Questions")
-                      ]
-                    )
-                  ],
-                  2
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "tab-inner-warp" }, [
-                _c(
-                  "div",
-                  { staticClass: "tab-inner" },
-                  [
-                    _vm._l(_vm.not_answers.data, function(question) {
-                      return _c("question", {
-                        key: question.id,
-                        attrs: { home: _vm.home, question: question }
-                      })
-                    }),
-                    _vm._v(" "),
-                    _c(
-                      "a",
-                      { staticClass: "load-questions", attrs: { href: "#" } },
-                      [
-                        _c("i", { staticClass: "icon-refresh" }),
-                        _vm._v("Load More Questions")
-                      ]
-                    )
-                  ],
-                  2
-                )
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("widget")
-        ],
-        1
-      )
-    ])
-  ])
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true

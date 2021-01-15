@@ -1,13 +1,14 @@
 <template>
 
 	<app-layout>
+
         <div class="section-warp ask-me">
 			<div class="container clearfix">
 				<div class="box_icon box_warp box_no_border box_no_background" box_border="transparent" box_background="transparent" box_color="#FFF">
 					<div class="row">
 						<div class="col-md-3">
-							<h2>Welcome to Ask me</h2>
-							<p>Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis. Curabitur vitae velit in neque dictum blandit. Proin in iaculis neque.</p>
+							<h2>Welcome to My Guide</h2>
+							<p>A place where developers in zimbabwe meet and can share ideas solve each other problems and also place for free lancers to create their portfolio.</p>
 							<div class="clearfix"></div>
 							<a class="color button dark_button medium" href="#">About Us</a>
 							<a class="color button dark_button medium" href="#">Join Now</a>
@@ -25,6 +26,9 @@
 				</div><!-- End box_icon -->
 			</div><!-- End container -->
 		</div><!-- End section-warp -->
+
+       <bread-crumbs name="My Guide"></bread-crumbs>
+
 	
 		<section class="container main-content">
 			<div class="row">
@@ -74,23 +78,27 @@
 	import Question from '@/Components/Question'
 	import Widget from '@/Components/Widgets/Widget'
 	import global from '@/Mixins/global'
+    import BreadCrumbs from '@/Components/BreadCrumbs'
+
     export default {
 		props:['questions',"answered_questions", "not_answers", "top_5users"],
 		mixins:[global],
         components: {
+        	BreadCrumbs,
             AppLayout,
 			Question,
 			Widget
         },
         mounted(){
         	this.getTags()
+        	this.selected_page = "home"
         },
         data(){
         	return {
-        		home:true
+        		home:true,
+        		page_name: "home"
         	}
         },
-      
         methods :{
         	 logout() {
                 this.$inertia.post(route('logout'));

@@ -60,50 +60,22 @@
 	    </div><!-- End header-top -->
         <header id="header">
             <section class="container clearfix">
-                <div class="logo"><a href="index-2.html"><img alt="" src="images/logo.png"></a></div>
+                <div class="logo"><a href="#"><img alt="" src="images/logo.png"></a></div>
                 <nav class="navigation">
                     <ul>
-                        <li class="current_page_item"><inertia-link :href="route('home')">Home</inertia-link>
+                        <li :class="{current_page_item:selected_page === 'home' }"><inertia-link :href="route('home')">Home</inertia-link>
                         </li>
-                        <li class="ask_question"><inertia-link :href="route('ask-question')">Ask Question</inertia-link></li>
-                        <li><a href="user_profile.html">User</a>
+                        <li class="ask_question " :class="{current_page_item:selected_page === 'ask' }"><inertia-link :href="route('ask-question')">Ask Question</inertia-link></li>
+                        <li><a href="#">Porfolio</a>
                             <ul>
-                                <li><a href="user_profile.html">User Profile</a></li>
-                                <li><a href="user_questions.html">User Questions</a></li>
-                                <li><a href="user_answers.html">User Answers</a></li>
-                                <li><a href="user_favorite_questions.html">User Favorite Questions</a></li>
-                                <li><a href="user_points.html">User Points</a></li>
-                                <li><a href="edit_profile.html">Edit Profile</a></li>
+                                <li><a href="">User Profile</a></li>
+                                <li><a href="">User Questions</a></li>
+                                <li><a href="">User Answers</a></li>
+                                <li><a href="">User Points</a></li>
+                                <li><a href="">Edit Profile</a></li>
                             </ul>
                         </li>
-                        <li><a href="blog_1.html">Blog</a>
-                            <ul>
-                                <li><a href="blog_1.html">Blog 1</a>
-                                    <ul>
-                                        <li><a href="blog_1.html">Right sidebar</a></li>
-                                        <li><a href="blog_1_l_sidebar.html">Left sidebar</a></li>
-                                        <li><a href="blog_1_full_width.html">Full Width</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="blog_2.html">Blog 2</a>
-                                    <ul>
-                                        <li><a href="blog_2.html">Right sidebar</a></li>
-                                        <li><a href="blog_2_l_sidebar.html">Left sidebar</a></li>
-                                        <li><a href="blog_2_full_width.html">Full Width</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="single_post.html">Post Single</a>
-                                    <ul>
-                                        <li><a href="single_post.html">Right sidebar</a></li>
-                                        <li><a href="single_post_l_sidebar.html">Left sidebar</a></li>
-                                        <li><a href="single_post_full_width.html">Full Width</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                      
-                        <li><a href="shortcodes.html">Shortcodes</a></li>
-                        <li><a href="contact_us.html">Contact Us</a></li>
+                        <li><a href="#">Contact Us</a></li>
                     </ul>
                 </nav>
             </section><!-- End container -->
@@ -114,7 +86,7 @@
 <script>
    	import Login from '@/Components/Navs/Login'
    	import Register from '@/Components/Navs/Register'
-
+    import global from '@/Mixins/global'
 
     export default {
         data() {
@@ -125,5 +97,6 @@
 			Login,
 			Register
 		},
+        mixins:[global]
     }
 </script>

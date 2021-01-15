@@ -12,7 +12,8 @@ export default {
             all_top_5users:[],
             success_message:"",
             success_message:"",
-            answer_button:false
+            answer_button:false,
+            selected_page:"home"
         }
     },
 

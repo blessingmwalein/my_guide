@@ -94,6 +94,7 @@
 		mixins:[global],
 		mounted(){
 			this.getTags()
+			this.selected_page = "ask"
 		},
         data(){
             return{
