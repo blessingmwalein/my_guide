@@ -6,16 +6,16 @@
 				<div class="col-md-4">
 					<div class="widget widget_contact">
 						<h3 class="widget_title">Where We Are ?</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi adipiscing gravida odio, sit amet suscipit risus ultrices eu.</p>
+						<p>Helping zimbabwean developers to share ideas in slutiosn to questions from other developers</p>
 						<ul>
 							<li>
 								<span>Address :</span>
-								Ask Me Network, 33 Street, syada Zeinab, Cairo, Egypt.
+								Ask Me Network, 7 wingate, rhodesville, Harare, Zimbabwe.
 							</li>
 							<li>
-								<span>Support :</span>Support Telephone No : (+2)01111011110
+								<span>Support :</span>Support Telephone No : (+263)772440088
 							</li>
-							<li>Support Email Account : info@example.com</li>
+							<li>Support Email Account : blessingmwwalein@outlook.com</li>
 						</ul>
 					</div>
 				</div>
@@ -23,35 +23,12 @@
 					<div class="widget">
 						<h3 class="widget_title">Quick Links</h3>
 						<ul>
-							<li><a href="index-2.html">Home</a></li>
-							<li><a href="ask_question.html">Ask Question</a></li>
-							<li><a href="#">About</a></li>
-							<li><a href="cat_question.html">Questions</a></li>
-							<li><a href="user_profile.html">Users</a></li>
-							<li><a href="blog_1.html">Blog</a></li>
-							<li><a href="right_sidebar.html">Pages</a></li>
-							<li><a href="shortcodes.html">Shortcodes</a></li>
-							<li><a href="contact_us.html">Contact Us</a></li>
+							<li><inertia-link :href="route('home')">Home</inertia-link></li>
+							<li><inertia-link :href="route('ask-question')">Ask Question</inertia-link></li>
+							<li><a href="">Contact Us</a></li>
 							<li><a href="#">FAQs</a></li>
 						</ul>
 					</div>
-				</div>
-				<div class="col-md-3">
-					<div class="widget">
-						<h3 class="widget_title">Popular Questions</h3>
-						<ul class="related-posts">
-							<li class="related-item">
-								<h3><a href="#">This is my first Question</a></h3>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lorem quam.</p>
-								<div class="clear"></div><span>Feb 22, 2014</span>
-							</li>
-							<li class="related-item">
-								<h3><a href="#">This Is My Second Poll Question</a></h3>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lorem quam.</p>
-								<div class="clear"></div><span>Feb 22, 2014</span>
-							</li>
-						</ul>
-					</div>	
 				</div>
 				<div class="col-md-3">
 					<div class="widget widget_twitter">
@@ -64,7 +41,7 @@
 	</footer><!-- End footer -->
 	<footer id="footer-bottom">
 		<section class="container">
-			<div class="copyrights f_left">Copyright 2014 Ask me | <a href="#">By 2code</a></div>
+			<div class="copyrights f_left">Copyright 2021 myguide | <a href="https://blessingmwalein.github.io/">By x.bling</a></div>
 			<div class="social_icons f_right">
 				<ul>
 					<li class="twitter"><a original-title="Twitter" class="tooltip-n" href="#"><i class="social_icon-twitter font17"></i></a></li>

@@ -3,7 +3,7 @@
 	<app-layout>
 
         <div class="section-warp ask-me">
-			<div class="container clearfix">
+			<div class="container  clearfix">
 				<div class="box_icon box_warp box_no_border box_no_background" box_border="transparent" box_background="transparent" box_color="#FFF">
 					<div class="row">
 						<div class="col-md-3">

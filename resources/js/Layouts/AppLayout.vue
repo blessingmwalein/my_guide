@@ -1,6 +1,5 @@
 <template>
     <div>
-        <jet-banner />
 
         <div id="wrap" class="grid_1200">
             <top-nav></top-nav>
@@ -8,7 +7,7 @@
                 <slot></slot>
             </main>
 
-            <footer></footer>
+            <footer-nav></footer-nav>
         </div>
     </div>
 </template>
@@ -21,7 +20,7 @@
     import JetNavLink from '@/Jetstream/NavLink'
     import JetResponsiveNavLink from '@/Jetstream/ResponsiveNavLink'
     import TopNav from "@/Components/Navs/TopNav"
-    import Footer from "@/Components/Navs/Footer"
+    import FooterNav from "@/Components/Navs/Footer"
 
 
     export default {
@@ -33,7 +32,7 @@
             JetNavLink,
             JetResponsiveNavLink,
             TopNav,
-            Footer
+            FooterNav
         },
 
         data() {

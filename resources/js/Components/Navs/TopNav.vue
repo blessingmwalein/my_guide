@@ -1,22 +1,6 @@
 <template>
     <div>
-        <div class="login-panel">
-		<section class="container">
-			<div class="row">
-				<div class="col-md-6">
-					<login></login>
-				</div><!-- End col-md-6 -->
-				<div class="col-md-6">
-					<div class="page-content Register">
-						<h2>Register Now</h2>
-						<p>Are you a developer in zimbabwe add a new account and enjoy pretty ideas from others that surrounds you.</p>
-						<a class="button color small signup">Create an account</a>
-					</div><!-- End page-content -->
-				</div><!-- End col-md-6 -->
-			</div>
-		</section>
-	</div><!-- End login-panel -->
-	
+        
 	<register></register>
 	
 	<div class="panel-pop" id="lost-password">

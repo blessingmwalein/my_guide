@@ -38695,22 +38695,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -40192,7 +40176,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 
 
@@ -40210,7 +40193,7 @@ __webpack_require__.r(__webpack_exports__);
     JetNavLink: _Jetstream_NavLink__WEBPACK_IMPORTED_MODULE_4__.default,
     JetResponsiveNavLink: _Jetstream_ResponsiveNavLink__WEBPACK_IMPORTED_MODULE_5__.default,
     TopNav: _Components_Navs_TopNav__WEBPACK_IMPORTED_MODULE_6__.default,
-    Footer: _Components_Navs_Footer__WEBPACK_IMPORTED_MODULE_7__.default
+    FooterNav: _Components_Navs_Footer__WEBPACK_IMPORTED_MODULE_7__.default
   },
   data: function data() {
     return {
@@ -78361,257 +78344,205 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", [
+    _c("footer", { attrs: { id: "footer" } }, [
+      _c("section", { staticClass: "container" }, [
+        _c("div", { staticClass: "row" }, [
+          _vm._m(0),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-2" }, [
+            _c("div", { staticClass: "widget" }, [
+              _c("h3", { staticClass: "widget_title" }, [
+                _vm._v("Quick Links")
+              ]),
+              _vm._v(" "),
+              _c("ul", [
+                _c(
+                  "li",
+                  [
+                    _c("inertia-link", { attrs: { href: _vm.route("home") } }, [
+                      _vm._v("Home")
+                    ])
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "li",
+                  [
+                    _c(
+                      "inertia-link",
+                      { attrs: { href: _vm.route("ask-question") } },
+                      [_vm._v("Ask Question")]
+                    )
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _vm._m(1),
+                _vm._v(" "),
+                _vm._m(2)
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _vm._m(3)
+        ])
+      ])
+    ]),
+    _vm._v(" "),
+    _vm._m(4)
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("footer", { attrs: { id: "footer" } }, [
-        _c("section", { staticClass: "container" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-md-4" }, [
-              _c("div", { staticClass: "widget widget_contact" }, [
-                _c("h3", { staticClass: "widget_title" }, [
-                  _vm._v("Where We Are ?")
-                ]),
-                _vm._v(" "),
-                _c("p", [
-                  _vm._v(
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi adipiscing gravida odio, sit amet suscipit risus ultrices eu."
-                  )
-                ]),
-                _vm._v(" "),
-                _c("ul", [
-                  _c("li", [
-                    _c("span", [_vm._v("Address :")]),
-                    _vm._v(
-                      "\n\t\t\t\t\t\t\tAsk Me Network, 33 Street, syada Zeinab, Cairo, Egypt.\n\t\t\t\t\t\t"
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("li", [
-                    _c("span", [_vm._v("Support :")]),
-                    _vm._v(
-                      "Support Telephone No : (+2)01111011110\n\t\t\t\t\t\t"
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("li", [_vm._v("Support Email Account : info@example.com")])
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-md-2" }, [
-              _c("div", { staticClass: "widget" }, [
-                _c("h3", { staticClass: "widget_title" }, [
-                  _vm._v("Quick Links")
-                ]),
-                _vm._v(" "),
-                _c("ul", [
-                  _c("li", [
-                    _c("a", { attrs: { href: "index-2.html" } }, [
-                      _vm._v("Home")
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("li", [
-                    _c("a", { attrs: { href: "ask_question.html" } }, [
-                      _vm._v("Ask Question")
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("li", [
-                    _c("a", { attrs: { href: "#" } }, [_vm._v("About")])
-                  ]),
-                  _vm._v(" "),
-                  _c("li", [
-                    _c("a", { attrs: { href: "cat_question.html" } }, [
-                      _vm._v("Questions")
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("li", [
-                    _c("a", { attrs: { href: "user_profile.html" } }, [
-                      _vm._v("Users")
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("li", [
-                    _c("a", { attrs: { href: "blog_1.html" } }, [
-                      _vm._v("Blog")
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("li", [
-                    _c("a", { attrs: { href: "right_sidebar.html" } }, [
-                      _vm._v("Pages")
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("li", [
-                    _c("a", { attrs: { href: "shortcodes.html" } }, [
-                      _vm._v("Shortcodes")
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("li", [
-                    _c("a", { attrs: { href: "contact_us.html" } }, [
-                      _vm._v("Contact Us")
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("li", [
-                    _c("a", { attrs: { href: "#" } }, [_vm._v("FAQs")])
-                  ])
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-md-3" }, [
-              _c("div", { staticClass: "widget" }, [
-                _c("h3", { staticClass: "widget_title" }, [
-                  _vm._v("Popular Questions")
-                ]),
-                _vm._v(" "),
-                _c("ul", { staticClass: "related-posts" }, [
-                  _c("li", { staticClass: "related-item" }, [
-                    _c("h3", [
-                      _c("a", { attrs: { href: "#" } }, [
-                        _vm._v("This is my first Question")
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("p", [
-                      _vm._v(
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lorem quam."
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "clear" }),
-                    _c("span", [_vm._v("Feb 22, 2014")])
-                  ]),
-                  _vm._v(" "),
-                  _c("li", { staticClass: "related-item" }, [
-                    _c("h3", [
-                      _c("a", { attrs: { href: "#" } }, [
-                        _vm._v("This Is My Second Poll Question")
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("p", [
-                      _vm._v(
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lorem quam."
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "clear" }),
-                    _c("span", [_vm._v("Feb 22, 2014")])
-                  ])
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-md-3" }, [
-              _c("div", { staticClass: "widget widget_twitter" }, [
-                _c("h3", { staticClass: "widget_title" }, [
-                  _vm._v("Latest Tweets")
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "tweet_1" })
-              ])
-            ])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("footer", { attrs: { id: "footer-bottom" } }, [
-        _c("section", { staticClass: "container" }, [
-          _c("div", { staticClass: "copyrights f_left" }, [
-            _vm._v("Copyright 2014 Ask me | "),
-            _c("a", { attrs: { href: "#" } }, [_vm._v("By 2code")])
+    return _c("div", { staticClass: "col-md-4" }, [
+      _c("div", { staticClass: "widget widget_contact" }, [
+        _c("h3", { staticClass: "widget_title" }, [_vm._v("Where We Are ?")]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "Helping zimbabwean developers to share ideas in slutiosn to questions from other developers"
+          )
+        ]),
+        _vm._v(" "),
+        _c("ul", [
+          _c("li", [
+            _c("span", [_vm._v("Address :")]),
+            _vm._v(
+              "\n\t\t\t\t\t\t\tAsk Me Network, 7 wingate, rhodesville, Harare, Zimbabwe.\n\t\t\t\t\t\t"
+            )
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "social_icons f_right" }, [
-            _c("ul", [
-              _c("li", { staticClass: "twitter" }, [
-                _c(
-                  "a",
-                  {
-                    staticClass: "tooltip-n",
-                    attrs: { "original-title": "Twitter", href: "#" }
-                  },
-                  [_c("i", { staticClass: "social_icon-twitter font17" })]
-                )
-              ]),
-              _vm._v(" "),
-              _c("li", { staticClass: "facebook" }, [
-                _c(
-                  "a",
-                  {
-                    staticClass: "tooltip-n",
-                    attrs: { "original-title": "Facebook", href: "#" }
-                  },
-                  [_c("i", { staticClass: "social_icon-facebook font17" })]
-                )
-              ]),
-              _vm._v(" "),
-              _c("li", { staticClass: "gplus" }, [
-                _c(
-                  "a",
-                  {
-                    staticClass: "tooltip-n",
-                    attrs: { "original-title": "Google plus", href: "#" }
-                  },
-                  [_c("i", { staticClass: "social_icon-gplus font17" })]
-                )
-              ]),
-              _vm._v(" "),
-              _c("li", { staticClass: "youtube" }, [
-                _c(
-                  "a",
-                  {
-                    staticClass: "tooltip-n",
-                    attrs: { "original-title": "Youtube", href: "#" }
-                  },
-                  [_c("i", { staticClass: "social_icon-youtube font17" })]
-                )
-              ]),
-              _vm._v(" "),
-              _c("li", { staticClass: "skype" }, [
-                _c(
-                  "a",
-                  {
-                    staticClass: "tooltip-n",
-                    attrs: { "original-title": "Skype", href: "skype:#?call" }
-                  },
-                  [_c("i", { staticClass: "social_icon-skype font17" })]
-                )
-              ]),
-              _vm._v(" "),
-              _c("li", { staticClass: "flickr" }, [
-                _c(
-                  "a",
-                  {
-                    staticClass: "tooltip-n",
-                    attrs: { "original-title": "Flickr", href: "#" }
-                  },
-                  [_c("i", { staticClass: "social_icon-flickr font17" })]
-                )
-              ]),
-              _vm._v(" "),
-              _c("li", { staticClass: "rss" }, [
-                _c(
-                  "a",
-                  {
-                    staticClass: "tooltip-n",
-                    attrs: { "original-title": "Rss", href: "#" }
-                  },
-                  [_c("i", { staticClass: "social_icon-rss font17" })]
-                )
-              ])
+          _c("li", [
+            _c("span", [_vm._v("Support :")]),
+            _vm._v("Support Telephone No : (+263)772440088\n\t\t\t\t\t\t")
+          ]),
+          _vm._v(" "),
+          _c("li", [
+            _vm._v("Support Email Account : blessingmwwalein@outlook.com")
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [_c("a", { attrs: { href: "" } }, [_vm._v("Contact Us")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("FAQs")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-3" }, [
+      _c("div", { staticClass: "widget widget_twitter" }, [
+        _c("h3", { staticClass: "widget_title" }, [_vm._v("Latest Tweets")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "tweet_1" })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("footer", { attrs: { id: "footer-bottom" } }, [
+      _c("section", { staticClass: "container" }, [
+        _c("div", { staticClass: "copyrights f_left" }, [
+          _vm._v("Copyright 2021 myguide | "),
+          _c("a", { attrs: { href: "https://blessingmwalein.github.io/" } }, [
+            _vm._v("By x.bling")
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "social_icons f_right" }, [
+          _c("ul", [
+            _c("li", { staticClass: "twitter" }, [
+              _c(
+                "a",
+                {
+                  staticClass: "tooltip-n",
+                  attrs: { "original-title": "Twitter", href: "#" }
+                },
+                [_c("i", { staticClass: "social_icon-twitter font17" })]
+              )
+            ]),
+            _vm._v(" "),
+            _c("li", { staticClass: "facebook" }, [
+              _c(
+                "a",
+                {
+                  staticClass: "tooltip-n",
+                  attrs: { "original-title": "Facebook", href: "#" }
+                },
+                [_c("i", { staticClass: "social_icon-facebook font17" })]
+              )
+            ]),
+            _vm._v(" "),
+            _c("li", { staticClass: "gplus" }, [
+              _c(
+                "a",
+                {
+                  staticClass: "tooltip-n",
+                  attrs: { "original-title": "Google plus", href: "#" }
+                },
+                [_c("i", { staticClass: "social_icon-gplus font17" })]
+              )
+            ]),
+            _vm._v(" "),
+            _c("li", { staticClass: "youtube" }, [
+              _c(
+                "a",
+                {
+                  staticClass: "tooltip-n",
+                  attrs: { "original-title": "Youtube", href: "#" }
+                },
+                [_c("i", { staticClass: "social_icon-youtube font17" })]
+              )
+            ]),
+            _vm._v(" "),
+            _c("li", { staticClass: "skype" }, [
+              _c(
+                "a",
+                {
+                  staticClass: "tooltip-n",
+                  attrs: { "original-title": "Skype", href: "skype:#?call" }
+                },
+                [_c("i", { staticClass: "social_icon-skype font17" })]
+              )
+            ]),
+            _vm._v(" "),
+            _c("li", { staticClass: "flickr" }, [
+              _c(
+                "a",
+                {
+                  staticClass: "tooltip-n",
+                  attrs: { "original-title": "Flickr", href: "#" }
+                },
+                [_c("i", { staticClass: "social_icon-flickr font17" })]
+              )
+            ]),
+            _vm._v(" "),
+            _c("li", { staticClass: "rss" }, [
+              _c(
+                "a",
+                {
+                  staticClass: "tooltip-n",
+                  attrs: { "original-title": "Rss", href: "#" }
+                },
+                [_c("i", { staticClass: "social_icon-rss font17" })]
+              )
             ])
           ])
         ])
@@ -79107,25 +79038,15 @@ var render = function() {
   return _c(
     "div",
     [
-      _c("div", { staticClass: "login-panel" }, [
-        _c("section", { staticClass: "container" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-md-6" }, [_c("login")], 1),
-            _vm._v(" "),
-            _vm._m(0)
-          ])
-        ])
-      ]),
-      _vm._v(" "),
       _c("register"),
+      _vm._v(" "),
+      _vm._m(0),
       _vm._v(" "),
       _vm._m(1),
       _vm._v(" "),
-      _vm._m(2),
-      _vm._v(" "),
       _c("header", { attrs: { id: "header" } }, [
         _c("section", { staticClass: "container clearfix" }, [
-          _vm._m(3),
+          _vm._m(2),
           _vm._v(" "),
           _c("nav", { staticClass: "navigation" }, [
             _c("ul", [
@@ -79156,9 +79077,9 @@ var render = function() {
                 1
               ),
               _vm._v(" "),
-              _vm._m(4),
+              _vm._m(3),
               _vm._v(" "),
-              _vm._m(5)
+              _vm._m(4)
             ])
           ])
         ])
@@ -79168,26 +79089,6 @@ var render = function() {
   )
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-6" }, [
-      _c("div", { staticClass: "page-content Register" }, [
-        _c("h2", [_vm._v("Register Now")]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "Are you a developer in zimbabwe add a new account and enjoy pretty ideas from others that surrounds you."
-          )
-        ]),
-        _vm._v(" "),
-        _c("a", { staticClass: "button color small signup" }, [
-          _vm._v("Create an account")
-        ])
-      ])
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -81826,26 +81727,20 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c("jet-banner"),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "grid_1200", attrs: { id: "wrap" } },
-        [
-          _c("top-nav"),
-          _vm._v(" "),
-          _c("main", [_vm._t("default")], 2),
-          _vm._v(" "),
-          _c("footer")
-        ],
-        1
-      )
-    ],
-    1
-  )
+  return _c("div", [
+    _c(
+      "div",
+      { staticClass: "grid_1200", attrs: { id: "wrap" } },
+      [
+        _c("top-nav"),
+        _vm._v(" "),
+        _c("main", [_vm._t("default")], 2),
+        _vm._v(" "),
+        _c("footer-nav")
+      ],
+      1
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -84003,7 +83898,7 @@ var render = function() {
     "app-layout",
     [
       _c("div", { staticClass: "section-warp ask-me" }, [
-        _c("div", { staticClass: "container clearfix" }, [
+        _c("div", { staticClass: "container  clearfix" }, [
           _c(
             "div",
             {
