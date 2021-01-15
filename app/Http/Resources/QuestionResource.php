@@ -21,10 +21,12 @@ class QuestionResource extends JsonResource
             "body" => $this->body,
             "user_id" => $this->user_id,
             "tags" => $this->tags,
-             "vote_count"=> $this->vote,
+            "vote_count"=> $this->vote,
             "votes" => $this->votes,
+            "answer_counter" =>$this->answer_counter,
             "stars" => $this->getTotalStars,
-            "answers" => $this->answers,
+            "answers" => AnswerResource::collection($this->answers),
+            "solved" => $this->solved,
             "user" => $this->user,
             "created_at" => $this->created_at
         ];

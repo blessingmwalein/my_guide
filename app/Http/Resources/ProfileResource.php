@@ -14,6 +14,15 @@ class ProfileResource extends JsonResource
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+        return [
+            "first_name" => $this->first_name,
+            "last_name" => $this->last_name,
+            "profile_photo" => $this->profile_photo,
+            "nick_name"=>$this->nick_name,
+            "skills"=> $this->skills,
+            "reputation" => $this->reputation,
+            "user_id" => $this->user_id,
+            "user" => $this->user
+        ];
     }
 }

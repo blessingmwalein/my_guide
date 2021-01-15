@@ -18,6 +18,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::post('question/ask', 'App\Http\Controllers\QuestionController@store');
+Route::get('question/all', 'App\Http\Controllers\QuestionController@questions');
 Route::get('question/{question}', 'App\Http\Controllers\QuestionController@view');
 Route::get('tags', 'App\http\Controllers\TagController@index');
 Route::post('question/upvote', 'App\Http\Controllers\VoteController@upvote');
+Route::post('question/downvote', 'App\Http\Controllers\VoteController@downvote');
+Route::post('answer/store', 'App\Http\Controllers\AnswerController@store');
+Route::post('answer/upvote', 'App\Http\Controllers\AnswerVoteController@upvote');
+Route::post('answer/downvote', 'App\Http\Controllers\AnswerVoteController@downvote');
+Route::post('answer/comment', 'App\Http\Controllers\CommentController@store');

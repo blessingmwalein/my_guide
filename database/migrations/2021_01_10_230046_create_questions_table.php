@@ -19,6 +19,10 @@ class CreateQuestionsTable extends Migration
             $table->string('title');
             $table->text('body');
             $table->foreignId('user_id')->constrained('users');
+            $table->integer('vote')->default(0);
+            $table->boolean('solved')->default(false);
+            $table->integer('answer_counter')->dafault(0);
+            
             $table->timestamps();
         });
     }

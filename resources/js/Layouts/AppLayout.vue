@@ -1,15 +1,14 @@
 <template>
     <div>
-    
+        <jet-banner />
 
-        <div id="wrap" class="boxed grid_1200">
-            <nav-bar></nav-bar>
-
-            <!-- Page Content -->
+        <div id="wrap" class="grid_1200">
+            <top-nav></top-nav>
             <main>
                 <slot></slot>
             </main>
 
+            <footer></footer>
         </div>
     </div>
 </template>
@@ -21,7 +20,9 @@
     import JetDropdownLink from '@/Jetstream/DropdownLink'
     import JetNavLink from '@/Jetstream/NavLink'
     import JetResponsiveNavLink from '@/Jetstream/ResponsiveNavLink'
-    import NavBar from '@/Components/Navs/TopNav'
+    import TopNav from "@/Components/Navs/TopNav"
+    import Footer from "@/Components/Navs/Footer"
+
 
     export default {
         components: {
@@ -31,7 +32,8 @@
             JetDropdownLink,
             JetNavLink,
             JetResponsiveNavLink,
-            NavBar
+            TopNav,
+            Footer
         },
 
         data() {

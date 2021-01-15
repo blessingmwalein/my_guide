@@ -26,28 +26,29 @@ class CreateNewUser implements CreatesNewUsers
         Validator::make($input, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'nickname' => ['required', 'string', 'max:255'],
-            'skills' => ['required', 'string'],
             'password' => $this->passwordRules(),
+            'skills' =>['required', 'string'],
+            'nickname' => ['required', 'string'],
             'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature() ? ['required', 'accepted'] : '',
         ])->validate();
 
         return DB::transaction(function () use ($input) {
-            return tap(User::create([
+            return tap(
+             $user=User::create([
                 'name' => $input['name'],
                 'email' => $input['email'],
                 'password' => Hash::make($input['password']),
-            ]), function (User $user) use ($input) {
+            ]),
+             function (User $user) use ($input) { 
                 $this->createTeam($user);
-
-                $profile = Profile::create([
-                    'profile_photo'=> 'avatar.png',
-                    "first_name" => $user->name,
-                    "last_name" => $user->name,
+                Profile::create([
+                    "profile_photo"=> "avatar.png",
+                    "first_name"=>$input['name'],
+                    "last_name"=>$input['name'],
                     "nick_name" => $input['nickname'],
-                    "skills" => $input["skills"],
-                    "reputation" => 0,
-                    "user_id" => $user->id
+                    "user_id" => $user->id,
+                    "skills" => $input['skills'],
+                    "reputation" => 0 
                 ]);
             });
         });

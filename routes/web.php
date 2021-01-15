@@ -16,19 +16,11 @@ use App\Models\Question;
 |
 */
 
-Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
-});
+Route::get('/','App\Http\Controllers\QuestionController@index')->name('index');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    
-    return Inertia::render('Dashboard', ['questions' => QuestionResource::collection(Question::paginate(20))]);
-})->name('dashboard');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard','App\Http\Controllers\QuestionController@index')->name('dashboard');
+
 Route::get('/home','App\Http\Controllers\QuestionController@index')->name('home');
 Route::middleware(['auth:sanctum', 'verified'])->get('/question/ask', function () {
     return Inertia::render('AskQuestion');

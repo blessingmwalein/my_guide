@@ -13,15 +13,14 @@
         <!-- Styles -->
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 
-        <link rel="stylesheet" href="{{asset('css/style.css')}}">
-	
+
+        <link rel="stylesheet" href="{{asset("/css/style.css")}}">
+        
         <!-- Skins -->
-        <link rel="stylesheet" href="{{asset('/assets/css/skins/skins.css')}}">
+        <link rel="stylesheet" href="{{asset("/assets/css/skins/skins.css")}}">
         
         <!-- Responsive Style -->
-        <link rel="stylesheet" href="{{asset('/assets/css/responsive.css')}}">
-
-        <!-- CSS only -->
+        <link rel="stylesheet" href="{{asset("/assets/css/responsive.css")}}">
 
         <!-- Scripts -->
         @routes
@@ -31,21 +30,26 @@
         @inertia
     </body>
 
-    <script src="{{asset('assets/js/jquery.min.js')}}"></script>
-    <script src="{{asset('assets/js/jquery-ui-1.10.3.custom.min.js')}}"></script>
-    <script src="{{asset('assets/js/jquery.easing.1.3.min.js')}}"></script>
-    <script src="{{asset('assets/js/html5.js')}}"></script>
-    <script src="{{asset('assets/js/twitter/jquery.tweet.js')}}"></script>
-    <script src="{{asset('assets/js/jflickrfeed.min.js')}}"></script>
-    <script src="{{asset('assets/js/jquery.inview.min.js')}}"></script>
-    <script src="{{asset('assets/js/jquery.tipsy.js')}}"></script>
-    <script src="{{asset('assets/js/tabs.js')}}"></script>
-    <script src="{{asset('assets/js/jquery.flexslider.js')}}"></script>
-    <script src="{{asset('assets/js/jquery.prettyPhoto.js')}}"></script>
-    <script src="{{asset('assets/js/jquery.carouFredSel-6.2.1-packed.js')}}"></script>
-    <script src="{{asset('assets/js/jquery.scrollTo.js')}}"></script>
-    <script src="{{asset('assets/js/jquery.nav.js')}}"></script>
-    <script src="{{asset('assets/js/tags.js')}}"></script>
-    <script src="{{asset('assets/js/jquery.bxslider.min.js')}}"></script>
-    <script src="{{asset('assets/js/custom.js')}}"></script>
+
+<!-- js -->
+    <script src="{{asset('/assets/js/jquery.min.js')}}"></script>
+    <script src="{{asset('/assets/js/jquery-ui-1.10.3.custom.min.js')}}"></script>
+    <script src="{{asset('/assets/js/jquery.easing.1.3.min.js')}}"></script>
+    <script src="{{asset('/assets/js/html5.js')}}"></script>
+    <script src="{{asset('/assets/js/twitter/jquery.tweet.js')}}"></script>
+    <script src="{{asset('/assets/js/jflickrfeed.min.js')}}"></script>
+    <script src="{{asset('/assets/js/jquery.inview.min.js')}}"></script>
+    <script src="{{asset('/assets/js/jquery.tipsy.js')}}"></script>
+    <script src="{{asset('/assets/js/tabs.js')}}"></script>
+    <script src="{{asset('/assets/js/jquery.flexslider.js')}}"></script>
+    <script src="{{asset('/assets/js/jquery.prettyPhoto.js')}}"></script>
+    <script src="{{asset('/assets/js/jquery.carouFredSel-6.2.1-packed.js')}}"></script>
+    <script src="{{asset('/assets/js/jquery.scrollTo.js')}}"></script>
+    <script src="{{asset('/assets/js/jquery.nav.js')}}"></script>
+    <script src="{{asset('/assets/js/tags.js')}}"></script>
+    <script src="{{asset('/assets/js/jquery.bxslider.min.js')}}"></script>
+    <script src="{{asset('/assets/js/custom.js')}}"></script>
+<!-- End js -->
+
+
 </html>

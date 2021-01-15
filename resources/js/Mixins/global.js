@@ -5,7 +5,14 @@ export default {
     data() {
         return {
             question_button: false,
-            all_tags:[]
+            all_tags:[],
+            error:"",
+            message:"",
+            all_questions:[],
+            all_top_5users:[],
+            success_message:"",
+            success_message:"",
+            answer_button:false
         }
     },
 
@@ -17,6 +24,14 @@ export default {
             })
             .catch(error=>{
                 console.log(error.response)
+            })
+        },
+        getQuestions(){
+            axios.get('/api/question/all').then(response=>{
+                this.all_questions = response.data.questions
+                this.all_top_5users = response.data.top_5users
+            }).catch(error=>{
+                console.log(error)
             })
         },
 
@@ -46,6 +61,13 @@ export default {
                 return Math.floor(interval) + " minutes";
             }
             return Math.floor(seconds) + " seconds";
+        },
+
+        showSuccess(message){
+            this.$notification.success(message);
+        },
+        showError(message){
+            this.$notification.error(message);
         }
     }
 }

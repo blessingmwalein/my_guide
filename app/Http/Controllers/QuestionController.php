@@ -10,20 +10,42 @@ use Illuminate\Support\Str;
 use App\Models\QuestionTag;
 use App\Models\Tag;
 use Inertia\Inertia as Inertia;
+use App\Http\Resources\ProfileResource;
+use App\Models\Profile;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Foundation\Application;
+
 
 class QuestionController extends Controller
 {
     public function index(){
 
-        return Inertia::render('Home', ['questions' => QuestionResource::collection(Question::paginate(20))]);
+        return Inertia::render('Home', [
+            'canLogin' => Route::has('login'),
+            'canRegister' => Route::has('register'),
+            'laravelVersion' => Application::VERSION,
+            'phpVersion' => PHP_VERSION,
+            'questions' => QuestionResource::collection(Question::latest()->paginate(20)),
+            "answered_questions"=> QuestionResource::collection(Question::where("answer_counter",">", 0)->paginate(20)),
+            "not_answers" => QuestionResource::collection(Question::where("answer_counter","<=", 0)->paginate(20)),
+            "top_5users" => ProfileResource::collection(Profile::orderBy('reputation', 'desc')->take(5)->get())
+        ]);
     }
+    public function questions(){
+
+        return response()->json(['questions' =>  QuestionResource::collection(Question::all()), "top_5users"=>ProfileResource::collection(Profile::orderBy('reputation', 'desc')->take(5)->get())]);
+
+    }
+
+
     public function store(QuestionRequest $request){
         
         $question = Question::create([
             'slug' =>Str::slug($request->title),
             'title' => $request->title,
             'body' => $request->body,
-            'user_id' => $request->user_id
+            'user_id' => $request->user_id,
+            "answer_counter" => 0
         ]);
 
         foreach ($request->tags as $tag  ) {
@@ -51,7 +73,10 @@ class QuestionController extends Controller
 
     public function show(Request $request,Question $question){
        
-        
         return Inertia::render('SingleQuestion', ['question' => new QuestionResource($question) ]);
+    }
+
+    public function alreadyVoted(){
+        
     }
 }

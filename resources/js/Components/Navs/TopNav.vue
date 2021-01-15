@@ -4,35 +4,12 @@
 		<section class="container">
 			<div class="row">
 				<div class="col-md-6">
-					<div class="page-content">
-						<h2>Login</h2>
-						<div class="form-style form-style-3">
-							<form>
-								<div class="form-inputs clearfix">
-									<p class="login-text">
-										<input type="text" value="Username" onfocus="if (this.value == 'Username') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Username';}">
-										<i class="icon-user"></i>
-									</p>
-									<p class="login-password">
-										<input type="password" value="Password" onfocus="if (this.value == 'Password') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Password';}">
-										<i class="icon-lock"></i>
-										<a href="#">Forget</a>
-									</p>
-								</div>
-								<p class="form-submit login-submit">
-									<input type="submit" value="Log in" class="button color small login-submit submit">
-								</p>
-								<div class="rememberme">
-									<label><input type="checkbox" checked="checked"> Remember Me</label>
-								</div>
-							</form>
-						</div>
-					</div><!-- End page-content -->
+					<login></login>
 				</div><!-- End col-md-6 -->
 				<div class="col-md-6">
 					<div class="page-content Register">
 						<h2>Register Now</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi adipiscing gravdio, sit amet suscipit risus ultrices eu. Fusce viverra neque at purus laoreet consequa. Vivamus vulputate posuere nisl quis consequat.</p>
+						<p>Are you a developer in zimbabwe add a new account and enjoy pretty ideas from others that surrounds you.</p>
 						<a class="button color small signup">Create an account</a>
 					</div><!-- End page-content -->
 				</div><!-- End col-md-6 -->
@@ -40,43 +17,7 @@
 		</section>
 	</div><!-- End login-panel -->
 	
-	<div class="panel-pop" id="signup">
-		<h2>Register Now<i class="icon-remove"></i></h2>
-		<div class="form-style form-style-3">
-			<form>
-				<div class="form-inputs clearfix">
-					<p>
-						<label class="required">Name<span>*</span></label>
-						<input v-model="form.name" type="text">
-					</p>
-                    <p>
-						<label class="required">Nick Name<span>*</span></label>
-						<input v-model="form.nickname" type="text">
-					</p>
-					<p>
-						<label class="required">E-Mail<span>*</span></label>
-						<input v-model="form.email" type="email">
-					</p>
-                    <p>
-						<label class="required">Skills<span>*</span></label>
-						<textarea style="width:100%" v-model="form.skills" id="question-details" aria-required="true" cols="100" rows="3"></textarea>
-                        
-                    </p>
-					<p>
-						<label class="required">Password<span>*</span></label>
-						<input v-model="form.password" type="password" value="">
-					</p>
-					<p>
-						<label class="required">Confirm Password<span>*</span></label>
-						<input v-model="form.password_confirmation" type="password" value="">
-					</p>
-				</div>
-				<p class="form-submit">
-					<button @click.prevent="submit" class="button color small submit">Signup</button>
-				</p>
-			</form>
-		</div>
-	</div><!-- End signup -->
+	<register></register>
 	
 	<div class="panel-pop" id="lost-password">
 		<h2>Lost Password<i class="icon-remove"></i></h2>
@@ -171,28 +112,18 @@
 </template>
 
 <script>
-   
+   	import Login from '@/Components/Navs/Login'
+   	import Register from '@/Components/Navs/Register'
+
+
     export default {
         data() {
             return {
-                form: this.$inertia.form({
-                    name: '',
-                    nickname:'',
-                    email: '',
-                    skills:'',
-                    password: '',
-                    password_confirmation: '',
-                    terms: false,
-                })
             }
         },
-
-        methods: {
-            submit() {
-                this.form.post(this.route('register'), {
-                    onFinish: () => this.form.reset('password', 'password_confirmation'),
-                })
-            }
-        }
+        components: {
+			Login,
+			Register
+		},
     }
 </script>
