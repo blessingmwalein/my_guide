@@ -52,11 +52,7 @@
                         <li class="ask_question " :class="{current_page_item:selected_page === 'ask' }"><inertia-link :href="route('ask-question')">Ask Question</inertia-link></li>
                         <li><a href="#">Porfolio</a>
                             <ul>
-                                <li><a href="">User Profile</a></li>
-                                <li><a href="">User Questions</a></li>
-                                <li><a href="">User Answers</a></li>
-                                <li><a href="">User Points</a></li>
-                                <li><a href="">Edit Profile</a></li>
+                                <li><inertia-link :href="route('user-profile">User Profile</inertia-link></li>
                             </ul>
                         </li>
                         <li><a href="#">Contact Us</a></li>
