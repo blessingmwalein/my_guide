@@ -36,6 +36,10 @@
 						<div class="tweet_1"></div>
 					</div>
 				</div>
+
+				<div class="col-md-3">
+					<img src="/assets/images/logo2.png" height="200" width="400" alt="">
+				</div>
 			</div><!-- End row -->
 		</section><!-- End container -->
 	</footer><!-- End footer -->

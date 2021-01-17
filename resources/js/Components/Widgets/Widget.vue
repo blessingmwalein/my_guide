@@ -84,7 +84,7 @@
 				
 				<div class="widget widget_tag_cloud">
 					<h3 class="widget_title">Tags</h3>
-					<a href="#" v-for="tag in all_tags">{{tag.name}}</a>
+					<a href="#" :key="tag.key" v-for="tag in all_tags">{{tag.name}}</a>
 				</div>
 				
 			</aside>

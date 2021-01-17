@@ -29,7 +29,7 @@ class User extends Authenticatable
         'name', 'email', 'password',
     ];
 
-    protected $with = ['profile'];
+    protected $with = ['profile', 'answers', 'questions'];
     /**
      * The attributes that should be hidden for arrays.
      *
@@ -62,5 +62,13 @@ class User extends Authenticatable
 
     public function profile(){
         return $this->hasOne(Profile::class);
+    }
+
+    public function questions(){
+        return $this->hasMany(Question::class);
+    }
+
+    public function answers(){
+        return $this->hasMany(Answer::class);
     }
 }

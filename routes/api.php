@@ -27,3 +27,6 @@ Route::post('answer/store', 'App\Http\Controllers\AnswerController@store');
 Route::post('answer/upvote', 'App\Http\Controllers\AnswerVoteController@upvote');
 Route::post('answer/downvote', 'App\Http\Controllers\AnswerVoteController@downvote');
 Route::post('answer/comment', 'App\Http\Controllers\CommentController@store');
+Route::post('profile/about/store', 'App\Http\Controllers\AboutController@store');
+Route::get('works', 'App\Http\Controllers\WorkController@index');
+Route::post('profile/work/store', 'App\Http\Controllers\UserWorkController@store');

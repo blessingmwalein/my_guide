@@ -26,3 +26,5 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/question/ask', function (
     return Inertia::render('AskQuestion');
 })->name('ask-question');
 Route::get('/question/{question}', 'App\Http\Controllers\QuestionController@show')->name('question-single');
+Route::middleware(['auth:sanctum', 'verified'])->get('/user/profile', 'App\Http\Controllers\UserController@show')->name('user-profile');
+

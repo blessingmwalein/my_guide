@@ -29,9 +29,9 @@
 		<section class="container clearfix">
 			<nav class="header-top-nav">
 				<ul>
-					<li><a href="contact_us.html"><i class="icon-envelope"></i>Contact</a></li>
-					<li><a href="#"><i class="icon-headphones"></i>Support</a></li>
-					<li><a href="login.html" id="login-panel"><i class="icon-user"></i>Login Area</a></li>
+					<li v-if=" this.$page.props.user"><a href="#" id="login-panel"><i class="icon-user"></i>{{ this.$page.props.user.name}}</a></li>
+					<li v-if=" this.$page.props.user"><a @click.prevent="logout" href="#" id="login-panel"><i class="icon-share"></i>Log Out</a></li>
+					<li v-if="!this.$page.props.user"><inertia-link :href="route('login')" id="login-panel"><i class="icon-user"></i>Login</inertia-link></li>
 				</ul>
 			</nav>
 			<div class="header-search">
@@ -44,7 +44,7 @@
 	    </div><!-- End header-top -->
         <header id="header">
             <section class="container clearfix">
-                <div class="logo"><a href="#"><img alt="" src="images/logo.png"></a></div>
+                <div class="logo"><a href="#"><img alt="" height="80" width="170" style="margin-top:; " src="/assets/images/logo2.png"></a></div>
                 <nav class="navigation">
                     <ul>
                         <li :class="{current_page_item:selected_page === 'home' }"><inertia-link :href="route('home')">Home</inertia-link>
@@ -81,6 +81,23 @@
 			Login,
 			Register
 		},
-        mixins:[global]
+        mixins:[global],
+        methods:{
+        	logout() {
+                this.$inertia.post(route('logout'));
+            },
+        }
     }
 </script>
+<style scoped>
+	
+
+	@font-face {
+		font-family: Elegence;
+		src: url(/font/elegence.ttf);
+		}
+
+		li a {
+		 font-family:Elegence
+	}
+</style>

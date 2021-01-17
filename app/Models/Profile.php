@@ -14,4 +14,23 @@ class Profile extends Model
     public function user(){
     	return $this->belongsTo(User::class);
     }
+
+    public function about(){
+    		return $this->hasOne(About::class);
+    }
+
+    public function badges(){
+    	return $this->hasMany(ProfileBadge::class);
+    }
+
+    public function user_works(){
+    	return $this->hasMany(UserWork::class);
+    }
+
+    public function tags(){
+        return $this->hasMany(ProfileTags::class);
+    }
+
+
+
 }

@@ -8,18 +8,27 @@ design by: 2code
 url: www.2code.info
 */
 /* Css */
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700);
 @import url("../assets/css/base.css");
 @import url("../assets/css/lists.css");
 @import url("../assets/css/bootstrap.min.css");
 @import url("../assets/css/prettyPhoto.css");
 @import url("../assets/css/font-awesome/css/font-awesome.min.css");
 @import url("../assets/css/fontello/css/fontello.css");
+
+@font-face {
+	font-family: Elegence;
+	src: url(/font/elegence.ttf);
+	}
+
+	li a {
+	 font-family:Elegence
+}
 body {
 	background-color: #f3f3f3;
 	color: #082E53;
 	-webkit-font-smoothing: antialiased;
 	overflow-x: hidden;
+	font-family:Elegence
 }
 .tag-pill{
 	background-color:#eaeaeb;
