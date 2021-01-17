@@ -433,10 +433,10 @@ export default {
     },
     show() {
       this.show_form = true;
-      this.about = this.profile.data.about;
-      this.profile.data.tags.forEach((tag) => {
-        this.tags.push(tag.tag);
-      });
+      // this.about = this.profile.data.about;
+      // this.profile.data.tags.forEach((tag) => {
+      //   this.tags.push(tag.tag);
+      // });
     },
 	submitWork(work){
 		this.addWork = true
