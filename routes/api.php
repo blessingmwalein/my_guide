@@ -20,7 +20,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('question/ask', 'App\Http\Controllers\QuestionController@store');
 Route::get('question/all', 'App\Http\Controllers\QuestionController@questions');
 Route::get('question/{question}', 'App\Http\Controllers\QuestionController@view');
-Route::get('tags', 'App\http\Controllers\TagController@index');
+Route::get('tags', 'App\Http\Controllers\TagController@index');
 Route::post('question/upvote', 'App\Http\Controllers\VoteController@upvote');
 Route::post('question/downvote', 'App\Http\Controllers\VoteController@downvote');
 Route::post('answer/store', 'App\Http\Controllers\AnswerController@store');
