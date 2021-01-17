@@ -252,8 +252,8 @@
 								<div id="accordions" class="row">
 									<div class="col-md-">
 										<div class="page-content page-shortcode">
-											<div class="boxedtitle page-title"><h2>Accordions</h2></div>
-											<div class="accordion">
+											<div class="boxedtitle page-title"><h2>Work Details & History</h2></div>
+											<div v-if="profile.data.user_works" class="accordion">
 												<div v-for="work in profile.data.user_works" :key="work.id">
 													<h4 class="accordion-title"><a href="#">{{work.work.title}}</a></h4>
 													<div class="accordion-inner">
@@ -261,7 +261,13 @@
 													</div>
 												</div>
 												
-												
+											</div>
+											<div v-else style="margin-left:px" class="col-md-8 widget widget_stats">
+												<div class="ul_list ul_list-icon-ok">
+													<ul>
+														<li><i ></i>Currently you dont have any work or history or certificates</li>
+													</ul>
+												</div>
 											</div>
 										</div><!-- End page-content -->
 									</div><!-- End Accordions -->
